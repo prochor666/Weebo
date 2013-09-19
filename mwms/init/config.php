@@ -1,12 +1,12 @@
 <?php
 /* System SQL */
-define("_SQLPREFIX_", "sport5");							// System tables prefix... "._SQLPREFIX_."_table
+define("_SQLPREFIX_", "weebo");							// System tables prefix... "._SQLPREFIX_."_table
 
 /* MySQL */
 define("_HOST_", "localhost");								// MySQL server
-define("_MYDB_", "c1sport5_cz");								// MySQL database name
-define("_USER_", "c1sport5_cz");								// MySQL user
-define("_PASS_", "Nebul@931");									// MySQL password
+define("_MYDB_", "mysql.db");								// MySQL database name
+define("_USER_", "mysql.login");							// MySQL user
+define("_PASS_", "mysql.pw");								// MySQL password
 
 /* PostgreSQL */
 define("_PGHOST_", "localhost");							// PostgreSQL server
@@ -16,7 +16,7 @@ define("_PGPORT_", "5432");									// PostgreSQL port
 define("_PGPASS_", "pwd");									// PostgreSQL password
 
 /* MEMCACHE */
-define("_MEMCACHEENABLED_", true);							// MEMCACHE enabled
+define("_MEMCACHEENABLED_", false);							// MEMCACHE enabled
 define("_MEMCACHESERVER_", "localhost");					// MEMCACHE server, default localhost
 define("_MEMCACHEPORT_", 11211);							// MEMCACHE port number, default 11211
 
@@ -74,7 +74,7 @@ define("_AUTOLOGOUT_", 2592000);							// Logout after xxx seconds
 
 /* Advancedconfig start !!! */
 define("_PRODUCTNAME_", "WEEBONX");
-define("_PRODUCTVERSION_", "2013.07.08");					// version YEAR.MONTH.DAY of release (suffix)
+define("_PRODUCTVERSION_", "2013.09.19");					// version YEAR.MONTH.DAY of release (suffix)
 define("_PRODUCTCODENAME_", "Nibiru");						// Code name 
 
 define("_FILESYSTEMSLASH_", "/");							// WEEBO 5/6 compat
