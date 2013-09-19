@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install>
+	<sql>
+		<mysql>
+			<table name="users">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_users (
+					id_user int(11) NOT NULL auto_increment,
+					root tinyint(4) default '0',
+					pw varchar(32) default NULL,
+					firstname varchar(50) default NULL,
+					lastname varchar(50) default NULL,
+					session varchar(32) default NULL,
+					ip varchar(50) default NULL,
+					lasttime int(11) default '0',
+					mail varchar(150) default NULL,
+					username varchar(50) default NULL,
+					userimage varchar(200) default NULL,
+					admin tinyint(1) default '0',
+					lng varchar(4) default NULL,
+					lp_token varchar(100) default NULL,
+					dashboard_config text,
+					PRIMARY KEY (id_user),
+					KEY firstname (firstname),
+					KEY lastname (lastname),
+					KEY session (session),
+					KEY mail (mail),
+					KEY username (username)
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1 AUTO_INCREMENT=1
+				]]>
+				</query>
+				<query>
+				<![CDATA[
+					INSERT INTO %SQLPREFIX%_users (id_user, root, pw, firstname, lastname, ip, lasttime, mail, username, userimage, admin, lng, lp_token, dashboard_config) 
+					VALUES 
+					(1, 1, 'c85dd1f6a088d0fd6271a02f593e9df5', 'Root', 'Admin', '127.0.0.1', 0, 'install@weebo.cz', 'admin', NULL, 1, NULL, NULL, '<root><desktop><module>mwms</module><module>users</module></desktop><startup>mwms</startup><lng>cs</lng></root>')
+				]]>
+				</query>
+			</table>
+
+			<table name="user_groups">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_user_groups (
+					id_group int(11) NOT NULL auto_increment,
+					admin tinyint(1) default '0',
+					title varchar(255) default NULL,
+					description text,
+					PRIMARY KEY  (id_group)
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1
+				]]>
+				</query>
+				
+			</table>
+
+			<table name="user_group_assign">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_user_group_assign (
+					id_user int(11) NOT NULL,
+					id_group int(11) NOT NULL,
+					PRIMARY KEY (id_user,id_group),
+					KEY id_user_2 (id_user),
+					KEY id_group (id_group)
+					) ENGINE=MyISAM DEFAULT CHARSET=utf8
+				]]>
+				</query>
+				
+			</table>
+
+			<table name="user_meta_types">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_user_meta_types (
+					id int(11) NOT NULL auto_increment,
+					public_ord int(11) default '0',
+					title varchar(255) default NULL,
+					size int(11) default '0',
+					system_type varchar(255) default NULL,
+					active tinyint(1) default '0',
+					`unique` tinyint(1) default '0',
+					predefined tinyint(1) default '0',
+					validate tinyint(1) default '0',
+					default_value text,
+					PRIMARY KEY  (id)
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1
+				]]>
+				</query>
+				
+			</table>
+
+			<table name="user_meta">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_user_meta (
+					id_connect int(11) NOT NULL,
+					id_meta int(11) NOT NULL,
+					int_value int(11) default '0',
+					float_value float default '0',
+					bool_value tinyint(1) default '0',
+					mail_value varchar(255) default NULL,
+					text_value varchar(255) default NULL,
+					blob_value text,
+					date_value int(11) default '0',
+					datetime_value int(11) default '0',
+					PRIMARY KEY (id_connect,id_meta),
+					KEY date_value (date_value),
+					KEY datetime_value (datetime_value),
+					KEY float_value (float_value),
+					KEY int_value (int_value),
+					FULLTEXT KEY text_value (text_value),
+					FULLTEXT KEY mail_value (mail_value),
+					FULLTEXT KEY blob_value (blob_value)
+					) ENGINE=MyISAM DEFAULT CHARSET=utf8
+				]]>
+				</query>
+				
+			</table>
+
+		</mysql>
+	</sql>
+	<fs>
+		<dir>content/users</dir>
+	</fs>
+	<methods>
+		<!--<method></method>-->
+	</methods>
+</install>
+
+

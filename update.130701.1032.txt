@@ -1,0 +1,4 @@
+WeeboNX update package
+01.07.2013
+
+* fixed no 404 error in CMS module when displaying content detail with id_public = 0

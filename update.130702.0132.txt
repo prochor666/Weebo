@@ -1,0 +1,9 @@
+WeeboNX update package
+02.07.2013
+
+* CMS module, fixed RSS shows future links
+* CMS module, fixed XML sitemap shows future links
+* CMS module, fixed SearchByKeywords(tags) shows future links
+* CMS module, fixed SearchByKeywords(tags) shows unpublished link content
+* CMS module, fixed XML sitemap shows unpublished links
+

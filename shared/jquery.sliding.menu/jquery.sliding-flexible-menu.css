@@ -1,0 +1,25 @@
+.sliding-flexible-menu {
+	position: relative;
+	font-size: 24px;
+	font-weight: normal;
+}
+.sliding-flexible-menu .holder {
+	position: relative;
+	overflow: hidden;
+	padding: 0px;
+	margin: 0px;
+}
+.sliding-flexible-menu .horizontal {
+	float:left;
+}
+.sliding-flexible-menu a {
+	cursor: pointer;
+	white-space: pre;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+.sliding-flexible-menu a.over,.sliding-flexible-menu a.active {
+	color: #FFFFAA !important;
+}
+

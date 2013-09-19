@@ -1,0 +1,100 @@
+# compress text, html, javascript, css, xml:
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+
+# APP MIME FIXES
+AddType application/x-javascript .js
+AddType text/css .css
+AddType application/xml .xml
+AddType video/ogg .ogv
+AddType video/mp4 .mp4
+AddType video/webm .webm
+
+# Or, compress certain file types by extension:
+<files *.html>
+SetOutputFilter DEFLATE
+</files>
+
+# ONLY FOR SUBDOMAIN MODE = true
+php_value session.cookie_domain ".vboxdev2"
+
+# PHP SETTINGS
+php_value upload_max_filesize 128M
+php_value post_max_size 128M
+php_value memory_limit 128M 
+
+php_value session.gc_maxlifetime "86400"
+php_value session.cache_expire "86400"
+php_value session.cookie_lifetime "86400"
+php_value session.gc_probability 0
+php_value register_globals Off
+php_value magic_quotes_gpc Off
+
+# ERROR PAGES
+ErrorDocument 401 /401.html
+ErrorDocument 403 /404.html
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
+ErrorDocument 503 /503.html
+
+# MOD REWRITE
+RewriteEngine on
+RewriteBase /
+
+# REMOVE WWW
+RewriteCond %{HTTP_HOST} ^www.domain.tld [NC]
+RewriteRule (.*) http://domain.tld/$1 [R=301,QSA,L]
+
+# TRANSLATE &amp; TO &
+RewriteCond %{QUERY_STRING} ^(.*)&amp;(.*)$
+RewriteRule ^(.*)$ $1?%1&%2 [E=newqs:%1&%2,N]
+RewriteCond %{ENV:newqs} !^$
+RewriteRule ^(.*)$ $1?%{ENV:newqs} [R=301,L,NE]
+
+# DISABLE SYSTEM FILES
+RewriteRule ^(.*/)?mwms/init/.* - [F]
+RewriteRule ^(.*/)?mwms/lib/.* - [F]
+RewriteRule ^(.*/)?mwms/live/.* - [F]
+RewriteRule ^(.*/)?mwms/lng/.* - [F]
+
+# DISABLE TRAILING SLASH AFTER DOCUMENT
+RewriteRule ^(.*)?\.html/.* - [F]
+
+### NEW MAPPING
+
+# TRAILING SLASH
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^(.*) $1 [L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !(.*)/$
+#RewriteRule ^(.*)$ /$1/ [L,R=301]
+
+#API
+RewriteCond %{REQUEST_URI} ^/apistream
+RewriteRule ^(.*) index.php?apic=$1&weeboapi= [L,QSA]
+
+# LEVEL 0 ADMIN&API
+RewriteRule sitemap.xml ?weeboapi=method&fn=CmsXmlSitemap::build_sitemap
+#RewriteRule swingtext.xml ?weeboapi=method&fn=Replacer::listContent
+RewriteRule rss.xml ?weeboapi=method&fn=RSSManager::outputRSS
+
+# UNI 3 LEVEL
+# domain.tld/?weebourl=url/sub > domain.tld/url/sub
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+
+### STATIC & API MAPPING
+
+# FORCE DOWNLOAD FILE with ?weebo-force-download
+RewriteCond %{QUERY_STRING} ^weebo-force-download$
+RewriteRule \.(jpe?g|gif|png|bmp|txt|nfo|sfv|js|css|html|xhtml|htm|hta|flv|mpg|avi|mp4|mp3|ogg|ogv)$ - [L,NC,T=application/octet-stream]
+

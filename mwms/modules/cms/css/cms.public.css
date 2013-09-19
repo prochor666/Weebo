@@ -1,0 +1,9 @@
+.weebo_image_description {
+	font-size: 11px;
+	font-style: italic;
+} 
+
+.weebo_half_image {
+	width: 50%;
+	float: left;
+}

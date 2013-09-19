@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install>
+	<sql>
+		<mysql>
+			<table name="cms_content">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_cms_content (
+					id_content int(11) NOT NULL auto_increment,
+					display_script varchar(255) default NULL,
+					display_script_param text NOT NULL,
+					title varchar(255) default NULL,
+					content mediumtext,
+					annotation_text text,
+					annotation_image text NOT NULL,
+					textmap varchar(255) default NULL,
+					ext_link text,
+					keywords varchar(255) default NULL,
+					id_public tinyint(1) default '0',
+					id_blank tinyint(1) default '0',
+					id_brief_level tinyint(1) default '0',
+					id_date_display tinyint(1) default '0',
+					id_type int(11) default '0',
+					id_rss int(11) NOT NULL default '0',
+					id_sticky tinyint(1) default '0',
+					date_public int(11) NOT NULL default '0',
+					id_date_restrict tinyint(1) default '0',
+					publish_date_from int(11) NOT NULL default '0',
+					publish_date_to int(11) NOT NULL default '0',
+					id_link int(11) default '0',
+					id_ins int(11) default '0',
+					id_upd int(11) default '0',
+					date_ins int(11) NOT NULL default '0',
+					date_upd int(11) NOT NULL default '0',
+					public_order int(11) default '0',
+					impress int(11) NOT NULL default '0',
+					PRIMARY KEY  (id_content),
+					FULLTEXT KEY `title` (`title`),
+					FULLTEXT KEY `content` (`content`),
+					FULLTEXT KEY `textmap` (`textmap`)
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1 AUTO_INCREMENT=1
+				]]>
+				</query>
+				
+			</table>
+
+			<table name="cms_links">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_cms_links (
+					id_link int(10) unsigned NOT NULL auto_increment,
+					title varchar(255) default NULL,
+					link_title varchar(255) default NULL,
+					template varchar(255) default NULL,
+					display_script varchar(255) default NULL,
+					domain varchar(32) default NULL,
+					pager_default int(11) default '0',
+					lng varchar(5) default NULL,
+					textmap varchar(255) default NULL,
+					ext_link text NOT NULL,
+					keywords varchar(255) default NULL,
+					description varchar(255) default NULL,
+					public_order int(11) default '0',
+					default_order varchar(255) default NULL,
+					id_public tinyint(1) default '0',
+					id_sub int(10) unsigned default '0',
+					id_blank tinyint(1) unsigned default '0',
+					id_rss tinyint(1) unsigned default NULL,
+					id_menu tinyint(1) unsigned default NULL,
+					id_sitemap tinyint(1) unsigned default NULL,
+					id_position tinyint(1) unsigned default NULL,
+					id_pager tinyint(1) unsigned default NULL,
+					date_ins int(11) NOT NULL,
+					date_upd int(11) default NULL,
+					id_ins int(10) unsigned NOT NULL,
+					id_upd int(10) unsigned default NULL,
+					PRIMARY KEY  (id_link),
+					FULLTEXT KEY `title` (`title`),
+					FULLTEXT KEY `keywords` (`keywords`),
+					FULLTEXT KEY `description` (`description`),
+					FULLTEXT KEY `domain` (`domain`)
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1
+				]]>
+				</query>
+				
+			</table>
+
+			<table name="cms_media_dir">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_cms_media_dir (
+					id_dir int(11) unsigned NOT NULL auto_increment,
+					title varchar(255) default NULL,
+					description varchar(255) default NULL,
+					public_order int(11) default '0',
+					mktime int(11) default '0',
+					path varchar(255) default NULL,
+					id_ins int(11) default '0',
+					id_upd int(11) default '0',
+					id_secure tinyint(1) default '0',
+					id_lock int(11) default '0',
+					domain varchar(255) default NULL,
+					type varchar(20) default NULL,
+					date_ins int(11) default '0',
+					date_upd int(11) default '0',
+					PRIMARY KEY (id_dir)
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1 AUTO_INCREMENT=1
+				]]>
+				</query>
+				
+			</table>
+
+			<table name="cms_media_list">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_cms_media_list (
+					id_media int(11) unsigned NOT NULL auto_increment,
+					title varchar(255) default NULL,
+					public_ord int(11) default '0',
+					description varchar(255) default NULL,
+					id_dir int(11) default NULL,
+					date_ins int(11) default '0',
+					date_upd int(11) default '0',
+					id_ins int(11) default '0',
+					id_upd int(11) default '0',
+					path text NOT NULL,
+					PRIMARY KEY (id_media)
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1 AUTO_INCREMENT=1
+				]]>
+				</query>
+			</table>
+
+			<table name="cms_forms">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_cms_forms (
+					id_form int(11) unsigned NOT NULL auto_increment,
+					title varchar(255) default NULL,
+					description varchar(255) default NULL,
+					date_ins int(11) default '0',
+					date_upd int(11) default '0',
+					id_ins int(11) default '0',
+					id_upd int(11) default '0',
+					config text NOT NULL,
+					domain varchar(255) default NULL,
+					PRIMARY KEY (id_form)
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1 AUTO_INCREMENT=1
+				]]>
+				</query>
+			</table>
+			
+			<table name="log">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_log (
+					tstamp int(11) unsigned default 0,
+					ident varchar(255) default NULL,
+					message text
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 CHECKSUM=1
+				]]>
+				</query>
+			</table>
+		</mysql>
+	</sql>
+	<fs>
+		<dir>content/cms/mail</dir>
+	</fs>
+	<methods>
+		<!--<method></method>-->
+	</methods>
+</install>
+
+

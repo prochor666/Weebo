@@ -1,0 +1,7 @@
+var Dload = {
+
+	bindTpl : function(){
+		
+	}
+
+}

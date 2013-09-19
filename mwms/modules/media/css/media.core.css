@@ -1,0 +1,149 @@
+#mwms_media_mount_view {
+	clear: both;
+	text-align: left;
+}
+
+#mwms_media_mount_view ul li {
+	margin-left: 24px;
+}
+
+#mwms_media_mount_view {
+	padding: 5px;
+	margin: 10px;
+	font-size: 14px;
+	color: #888;
+}
+
+#mount_header {
+	padding: 5px;
+	margin: 10px;
+	border: 1px solid #ddd;
+	line-height: 26px;
+	color: #888;
+	box-shadow: 3px 3px 2px #888;
+	text-align: right;
+}
+
+#mount_header code {
+	float: left;
+	text-align: left;
+}
+
+#mount_header button {
+	
+}
+
+div.file, div.dir {
+	display: inline-block;
+	width: 120px;
+	height: 145px;
+	font-size: 12px;
+	float: left;
+	position: relative;
+	text-align: center;
+	margin: 4px;
+	box-shadow: 2px 2px 2px #888;
+	border: 1px solid #bbb;
+} 
+
+div.file:hover, div.dir:hover {
+	background: #eee;
+}
+
+a.file, a.dir {
+	display: inline-block;
+	width: 110px;
+	height: 60px;
+	padding: 60px 5px 0 5px;
+	margin: 0 auto;
+	word-wrap: break-word;
+	overflow: hidden;
+	text-align: center;
+} 
+
+a.file {
+	background: none transparent no-repeat center 5px;
+}
+
+div.dir_up a.dir {
+	background: url(../img/folder_up.png) transparent no-repeat center 5px;
+}
+
+div.dir_readable a.dir {
+	background: url(../img/folder.png) transparent no-repeat center 5px;
+}
+
+div.dir_unreadable a.dir {
+	background: url(../img/folder_remove.png) transparent no-repeat center 5px;
+}
+
+a.file:hover, a.dir:hover {
+	
+} 
+
+a.file span {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	display: block;
+	width: 110px;
+	height: 50px;
+	text-align: center; 
+	z-index: 70;
+	overflow: hidden;
+	/*margin: -48px auto 0 auto;*/
+}
+
+span.size {
+	position: absolute;
+	bottom: 5px;
+	left: 0;
+	display: block;
+	width: 70px;
+	height: 14px;
+	text-align: center; 
+	font-size: 11px;
+	padding: 1px;
+	color: #888;
+	z-index: 71;
+}
+
+a.file span img {
+	max-height: 48px;
+	_height: expression(this.scrollHeight > 48? "48px" : "auto" );
+	overflow: hidden;
+	border: 0;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+}
+
+a.remove-file, a.remove-dir {
+	position: absolute;
+	bottom: 1px;
+	right: 0px;
+	z-index: 72;
+}
+
+#mediaspace {
+	float: none;
+	clear: both;
+	width: 100%;
+	text-align: center;
+}
+
+#mediaspace div.image {
+	text-align: center;
+}
+
+#mediaspace video {
+	
+}
+
+#mwms_media_file_view_inner pre {
+	margin: 10px 0;
+}
+
+#mediaspace pre {
+	width: 90%;
+	text-align: left;
+}

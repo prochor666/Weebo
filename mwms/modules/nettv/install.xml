@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install>
+	<sql>
+		<mysql>
+			<table name="nettv_guide">
+				<query>
+				<![CDATA[
+					CREATE TABLE %SQLPREFIX%_nettv_guide (
+					id_guide int(11) NOT NULL AUTO_INCREMENT,
+					title varchar(250) NOT NULL,
+					description text,
+					day tinyint(1) NOT NULL,
+					id_show int(11) default '0',
+					date_from int(11) NOT NULL,
+					date_to int(11) NOT NULL,
+					id_ins int(11) default '0',
+					id_upd int(11) default '0',
+					date_ins int(11) NOT NULL default '0',
+					date_upd int(11) NOT NULL default '0',
+					PRIMARY KEY (id_guide)
+					) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+				]]>
+				</query>
+			</table>
+			<table name="nettv_shows">
+				<query>
+				<![CDATA[
+					CREATE TABLE %SQLPREFIX%_nettv_shows (
+					id_show int(11) NOT NULL AUTO_INCREMENT,
+					title varchar(250) NOT NULL,
+					description_short text,
+					description text,
+					image varchar(250) NOT NULL,
+					id_archive int(11) default '0',
+					id_dir int(11) default '0',
+					id_active int(11) default '0',
+					id_ins int(11) default '0',
+					id_upd int(11) default '0',
+					date_ins int(11) NOT NULL default '0',
+					date_upd int(11) NOT NULL default '0',
+					PRIMARY KEY (id_show)
+					) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+				]]>
+				</query>
+			</table>
+			<table name="nettv_show_items">
+				<query>
+				<![CDATA[
+					CREATE TABLE %SQLPREFIX%_nettv_show_items (
+					id_item int(11) NOT NULL AUTO_INCREMENT,
+					title varchar(250) NOT NULL,
+					id_public tinyint(1) default '0',
+					id_import int(11) default '0',
+					description text,
+					impress int(11) default '0',
+					media text,
+					image_active int(11) default '0',
+					type varchar(50) default NULL,
+					format varchar(50) default NULL,
+					series int(11) default 0,
+					episode int(11) default 0,
+					date_public int(11) default '0',
+					id_show int(11) default '0',
+					id_ins int(11) default '0',
+					id_upd int(11) default '0',
+					date_ins int(11) NOT NULL default '0',
+					date_upd int(11) NOT NULL default '0',
+					PRIMARY KEY (id_item)
+					) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+				]]>
+				</query>
+			</table>
+			<table name="nettv_import">
+				<query>
+				<![CDATA[
+					CREATE TABLE %SQLPREFIX%_nettv_import (
+					id_import int(11) NOT NULL AUTO_INCREMENT,
+					title varchar(250) NOT NULL,
+					description text,
+					data text,
+					job_done tinyint(1) default 0,
+					job_done_at int(11) default 0,
+					date_ins int(11) NOT NULL default '0',
+					date_upd int(11) NOT NULL default '0',
+					PRIMARY KEY (id_import)
+					) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+				]]>
+				</query>
+			</table>
+			<table name="nettv_team">
+				<query>
+				<![CDATA[
+					CREATE TABLE %SQLPREFIX%_nettv_team (
+					id_team int(11) NOT NULL AUTO_INCREMENT,
+					title varchar(250) NOT NULL,
+					description text,
+					id_dir int(11) default '0',
+					image varchar(250) NOT NULL,
+					id_active int(11) default '0',
+					id_ins int(11) default '0',
+					id_upd int(11) default '0',
+					date_ins int(11) NOT NULL default '0',
+					date_upd int(11) NOT NULL default '0',
+					PRIMARY KEY (id_team)
+					) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+				]]>
+				</query>
+			</table>
+		</mysql>
+	</sql>
+	<fs>
+		<dir>content/nettv/dvd/in</dir>
+		<dir>content/nettv/dvd/out</dir>
+		<dir>content/nettv/pid</dir>
+		<dir>content/nettv/import</dir>
+		<dir>content/nettv/media</dir>
+		<dir>content/nettv/media/images</dir>
+		<dir>content/nettv/media/videos</dir>
+	</fs>
+	<methods>
+		<!--<method></method>-->
+	</methods>
+</install>
+
+

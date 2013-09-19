@@ -1,0 +1,157 @@
+#mwms_load_content_inner{
+	min-height: 300px;
+}
+
+#mwms_content_show {
+	min-height: 400px;
+}
+
+#adv-plot-wrapper {
+	text-align: center;
+}
+
+#asset-stat-impress, #asset-stat-clicks, #asset-stat-ctr, #adv-plot-wrapper button {
+	margin: 15px auto;
+}
+
+/* MISC */
+div.adv_menu {
+	margin: 0 0 15px 0;
+	padding: 5px;
+	border: 1px solid #ddd;
+	line-height: 26px;
+	color: #888;
+	box-shadow: 3px 3px 2px #888;
+}
+
+div.adv_menu a.ui-state-active, div.adv_menu .ui-state-active:hover * {
+	color: #000 !important;
+}
+
+div.order_box {
+	float: right;
+	width: 32px;
+}
+
+div.order_box a.order_desc_icon, div.order_box a.order_asc_icon {
+	display: inline-block;
+	width: 14px;
+}
+
+table.mwms_detail_table {
+	min-width: 830px;
+}
+
+table.mwms_data_list caption {
+	margin-bottom: 10px;
+}
+
+table.mwms_data_list tr {
+	background: #fff;
+}
+
+table.mwms_meta_detail tr:hover, table.group_live_edit tr:hover, table.meta_live_edit tr:hover {
+	background: none !important; 
+}
+
+td.meta_head {
+	vertical-align: top;
+	min-width: 100px;
+	max-width: 120px;
+	padding: 4px !important;
+	font-weight: bold !important;
+	background: #eee;
+	border-bottom: 2px solid #fff;
+}
+
+td.meta_edit_cell {
+	vertical-align: top;
+	/*min-width: 500px !important;*/
+	width: 690px;
+	padding: 4px !important;
+	background: #eee;
+	border-bottom: 2px solid #fff;
+}
+
+div.edit_form {
+	width: 100%;
+}
+
+input.meta_live_edit, select.meta_live_edit {
+	min-width: 260px;
+	max-width: 450px;
+}
+
+textarea.meta_live_edit {
+	width: 450px;
+}
+
+.bp_wrap {
+	padding: 10px 0;
+	border: 1px solid #bbb;
+	clear: both;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.banner_prewiev {
+	
+}
+
+/* toggled */
+span.toggle-icon {
+	background-color: transparent;
+	background-position: center center;
+	display: block;
+	margin: 0 auto;
+	width: 16px;
+	height: 16px;
+	line-height: 16px;
+}
+
+span.on {
+	background-image: url(../../../../admin/default/img/theme-iconset/accept.png);
+}
+
+span.off {
+	background-image: url(../../../../admin/default/img/theme-iconset/remove.png);
+}
+
+/* fn toolbar */
+th.toolbar {
+	width: 120px !important;
+}
+
+.mwms-data-toolbar {
+	display: inline-block;
+}
+
+div.warn {
+	display: inline-block;
+	float: right;
+	width: 110px;
+	font-weight: bold;
+	font-size: 10px !important;
+	padding: 2px;
+	margin: 0;
+}
+
+div.ok {
+	font-weight: bold;
+	padding: 4px;
+}
+
+
+div.bad {
+	font-weight: bold;
+	padding: 4px;
+}
+
+div.warn span.ui-icon, div.ok span.ui-icon, div.bad span.ui-icon {
+	float: left;
+	margin: 0 4px 0 0;
+}
+
+.cc {
+	text-align: center !important;
+}

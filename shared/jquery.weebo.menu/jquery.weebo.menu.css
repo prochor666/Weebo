@@ -1,0 +1,84 @@
+.weebo-menu-wrapper {
+	background: url(img/menu.gif) transparent repeat-x;
+	/*width: 960px;*/
+}
+
+.weebo-menu-wrapper>ul {
+	margin: 0;
+}
+
+.weebo-menu-wrapper ul {
+	list-style-type: none;
+}
+
+.weebo-menu-wrapper ul li {
+	position: relative;
+	display: inline-block;
+	float: left;
+}
+
+.weebo-menu-wrapper ul li a {
+	display: inline-block;
+	color: #fff;
+	text-decoration: none;
+	line-height: 30px;
+	padding: 0 15px;
+	background: url(img/menu.dot.png) transparent no-repeat right center;
+}
+
+.weebo-menu-wrapper ul li a:hover {
+	background: url(img/menu.sel.gif) transparent repeat-x;
+}
+
+.weebo-menu-wrapper ul li ul li {
+
+}
+
+/* 1st sub level menu */
+.weebo-menu-wrapper ul li ul{
+	position: absolute;
+	left: 0px;
+	display: none;
+}
+
+.weebo-menu-wrapper ul li ul li{
+	float: left !important;
+}
+
+.weebo-menu-wrapper ul li ul li ul{
+	top: 0;
+}
+
+.weebo-menu-wrapper ul li ul li a{
+	display: inline-block !important;
+	padding: 0 10px;
+	margin: 4px 0;
+	line-height: 25px;
+	color: #000;
+	background: url(img/menu.dot.png) transparent no-repeat right center;
+}
+
+.weebo-menu-wrapper ul li ul li a:hover{
+	border-bottom: 4px solid #c00;
+	color: #c00;
+	background: url(img/menu.dot.png) transparent no-repeat right center;
+}
+
+/* actual pages */
+.weebo-menu-wrapper>ul>li.level-1>a.menu-item-actual-link {
+	background: url(img/menu.sel.gif) transparent repeat-x;
+}
+
+.weebo-menu-wrapper ul li ul li.level-2 a.menu-item-actual-link {
+	border-bottom: 4px solid #c00;
+	color: #c00;
+}
+
+.weebo-menu-wrapper>ul>li.level-1>a.menu-item-actual-link:hover {
+	color: #fff;
+}
+
+.weebo-menu-wrapper ul li ul li.level-2 a.menu-item-actual-link:hover {
+	color: #fff;
+}
+

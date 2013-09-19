@@ -1,0 +1,4 @@
+WeeboNX update package
+01.07.2013
+
+* CMS module, fixed quote(validation) error in links generation

@@ -1,0 +1,6 @@
+WeeboNX update package
+09.07.2013
+
+* CMS module, default log table added to install.xml
+* Setup _INSTALLCHECK_ = true in /mwms/init/config.php before install and disable it to false after update
+

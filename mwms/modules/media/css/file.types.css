@@ -1,0 +1,32 @@
+div.file a.image {
+	/*background-image: url(../img/image.png);*/
+	background-image: none;
+}
+div.file a.video {
+	background-image: url(../img/play.png);
+}
+div.file a.audio {
+	background-image: url(../img/speaker.png);
+}
+div.file a.doc {
+	background-image: url(../img/page.png);
+}
+div.file a.pdf {
+	background-image: url(../img/page_pdf.png);
+}
+div.file a.ascii {
+	background-image: url(../img/notebook.png);
+}
+div.file a.archive {
+	background-image: url(../img/archive.png);
+}
+div.file a.other {
+	background-image: url(../img/window.png);
+}
+div.file a.url {
+	background-image: url(../img/application_search.png);
+}
+div.file a.embed {
+	background-image: url(../img/computer_network.png);
+}
+

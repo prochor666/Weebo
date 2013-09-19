@@ -1,0 +1,129 @@
+div#hash_control, div#date_time_control, div#url_control, div#js_pack_control, div#crypt_performance, div#php_run {
+	min-height: 400px;
+	height: auto;
+	_height: 400px;
+}
+
+div#mwms_devtool div.devtool_source_wrap, div#mwms_devtool div.devtool_result_wrap {
+	float: left;
+}
+
+div#mwms_devtool div.devtool_separator_wrap {
+	width: 250px;
+	line-height: 50px;
+	float: left;
+	text-align: center;
+}
+
+button.data_send, button.data_resend {
+	margin: 10px auto;
+}
+
+select#data_callback, select#data_format {
+	margin: 10px auto;
+	width: 150px;
+	font-size: 14px;
+	border: 1px solid #000;
+}
+
+#devtool_source, #devtool_result, input#data_format {
+	font-size: 14px;
+	line-height: 25px;
+}
+
+textarea#devtool_source, textarea#devtool_result {
+	width: 360px;
+	height: 200px;
+	border: 1px solid #000; 
+	margin: 10px;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+input#devtool_source, input#devtool_result, input#data_format {
+	width: 200px;
+	height: 25px; 
+	border: 1px solid #000; 
+	padding: 0 5px;
+	margin: 10px;
+}
+
+div#php_run textarea#devtool_source {
+	width: 360px;
+	height: 300px;
+}
+
+input#data_format {
+	width: 140px;
+}
+
+div#crypt_performance textarea#devtool_result {
+	width: 600px;
+	height: 360px;
+}
+
+iframe#devtool_result {
+	width: 95%;
+	min-height: 360px;
+	height: auto;
+	_height: 360px;
+	border: 1px solid #000; 
+	margin: 10px;
+}
+
+/* FILE list */
+div#php_run div.devtool_source_wrap {
+	width: 50%;
+	min-width: 400px;
+}
+
+div#php_run div.devtool_separator_wrap {
+	width: 100px;
+}
+
+.CodeMirror {
+	border: 1px solid #666;
+	width: 100%;
+	margin: 10px 0;
+}
+
+div.php_sources div {
+	width: 360px;
+	font-size: 11px;
+	clear: left;
+}
+div.php_sources a.file {
+	width: 320px;
+	display: inline-block;
+	padding: 2px 0;
+	float: left;
+	background: #eee;
+}
+div.php_sources a.file:hover {
+	background: #ffa;
+}
+
+div.php_sources a span.time {
+	display: inline-block;
+	width: 100px;
+	color: #000;
+	padding: 2px;
+	float: right;
+	text-align: right;
+}
+
+div.php_sources a span.size {
+	display: inline-block;
+	width: 60px;
+	color: #000;
+	padding: 2px;
+	float: right;
+	text-align: right;
+}
+
+div.php_sources a.remove {
+	width: 19px;
+	height: 16px;
+	font-size: 11px;
+	float: right;
+}

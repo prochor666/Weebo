@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>jQuery Sliding Flexible Menu</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="content-language" content="en" />  
+		<link rel="stylesheet" type="text/css" href="jquery.sliding-flexible-menu.css" />	
+		<!--jQuery-->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
+		<!--Menu-->
+		<script type="text/javascript" src="jquery.sliding-flexible-menu.js"></script>
+		
+		<!--Initialize-->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				//Horizontal
+				$('div.menu-horizontal').slidingFlexibleMenu({
+					direction: "horizontal",
+					buttonSpacing: 5
+				});
+				//Vertical
+				$('div.menu').slidingFlexibleMenu({
+					slideType: "left"
+				});
+			});
+		</script>
+	</head>
+	<body scroll="no">
+		<div id="container">
+        	<div id="center">
+
+				<h1>HORIZONTAL</h1>
+				<div class="menu-horizontal">
+					<a href="http://www.flashdo.com/" class="active">Home</a>
+					<a href="http://www.flashdo.com/user/flashblue">Profile</a>
+					<a href="http://www.flashdo.com/user/flashblue/portfolio">Portfolio</a>
+					<a href="http://www.flashdo.com/category/javascript/navigation">Navigation</a>
+					<a href="http://www.flashdo.com/support">Contact</a>
+				</div>
+				<p>&nbsp;</p>
+                <h1>VERTICAL</h1>
+				<div class="menu">
+					<a href="http://www.flashdo.com/">Home</a>
+					<a href="http://www.flashdo.com/user/flashblue" class="active">Profile</a>
+					<a href="http://www.flashdo.com/user/flashblue/portfolio">Portfolio</a>
+					<a href="http://www.flashdo.com/category/javascript/navigation">Navigation</a>
+					<a href="http://www.flashdo.com/support">Contact</a>
+				</div>
+			</div>
+        </div>			
+	</body>
+</html>

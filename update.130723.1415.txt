@@ -1,0 +1,6 @@
+WeeboNX update package
+23.07.2013
+
+* .htaccess default security, added Options -Indexes
+* check your webserver configuration, if you need this!
+

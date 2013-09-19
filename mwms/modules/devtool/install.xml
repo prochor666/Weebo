@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install>
+	<sql>
+		<mysql>
+			<table name="devtool_log">
+				<query>
+				<![CDATA[
+					CREATE TABLE %SQLPREFIX%_devtool_log (
+					id_log int(11) NOT NULL auto_increment,
+					message text,
+					PRIMARY KEY (id_log)
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1 AUTO_INCREMENT=1
+				]]>
+				</query>
+			</table>
+
+		</mysql>
+	</sql>
+	<fs>
+		<dir>content/devtool</dir>
+		<dir>content/devtool/phptests</dir>
+	</fs>
+</install>

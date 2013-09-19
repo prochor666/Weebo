@@ -1,0 +1,3 @@
+RewriteEngine Off
+RewriteBase /
+Deny from all

@@ -1,0 +1,7 @@
+WeeboNX update package
+20.06.2013
+
+* fixed multidomain issues in CMS module
+* fixed rss generator in CMS module 
+
+

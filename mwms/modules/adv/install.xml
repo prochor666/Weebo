@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install>
+	<sql>
+		<mysql>
+			<table name="adv_assets">
+				<query>
+				<![CDATA[
+					CREATE TABLE %SQLPREFIX%_adv_assets (
+					id_asset int(12) NOT NULL AUTO_INCREMENT,
+					title varchar(250) NOT NULL,
+					id_banner int(12) NOT NULL,
+					id_position int(12) NOT NULL,
+					id_campaign int(12) NOT NULL,
+					id_active tinyint(1) NOT NULL default 0,
+					date_from int(12) NOT NULL,
+					date_to int(12) NOT NULL,
+					max_impressions int(12) NOT NULL,
+					id_ins int(11) default '0',
+					id_upd int(11) default '0',
+					date_ins int(11) NOT NULL default '0',
+					date_upd int(11) NOT NULL default '0',
+					PRIMARY KEY (id_asset),
+					KEY id_banner (id_banner,id_position,id_campaign)
+					) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+				]]>
+				</query>
+			</table>
+			<table name="adv_asset_stats">
+				<query>
+				<![CDATA[
+					CREATE TABLE %SQLPREFIX%_adv_asset_stats (
+					id_asset int(12) NOT NULL,
+					length int(12) NOT NULL,
+					action_time int(12) NOT NULL,
+					action_type tinyint(4) NOT NULL,
+					ref text NOT NULL,
+					KEY id_asset (id_asset),
+					KEY action_time (action_time),
+					KEY action_type (action_type)
+					) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+				]]>
+				</query>
+			</table>
+			<table name="adv_banners">
+				<query>
+				<![CDATA[
+					CREATE TABLE %SQLPREFIX%_adv_banners (
+					id_banner int(12) NOT NULL AUTO_INCREMENT,
+					title varchar(250) NOT NULL,
+					format varchar(250) NOT NULL,
+					file varchar(250) NOT NULL,
+					url text NOT NULL,
+					id_blank tinyint(1) NOT NULL,
+					id_wmode tinyint(1) NOT NULL,
+					clickthru tinyint(1) NOT NULL,
+					timeout int(11) default 0,
+					id_ins int(11) default '0',
+					id_upd int(11) default '0',
+					date_ins int(11) NOT NULL default '0',
+					date_upd int(11) NOT NULL default '0',
+					PRIMARY KEY (id_banner)
+					) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+				]]>
+				</query>
+			</table>
+			<table name="adv_campaigns">
+				<query>
+				<![CDATA[
+					CREATE TABLE %SQLPREFIX%_adv_campaigns (
+					id_campaign int(12) NOT NULL AUTO_INCREMENT,
+					title varchar(250) NOT NULL,
+					id_ins int(11) default '0',
+					id_upd int(11) default '0',
+					date_ins int(11) NOT NULL default '0',
+					date_upd int(11) NOT NULL default '0',
+					PRIMARY KEY (id_campaign)
+					) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+				]]>
+				</query>
+			</table>
+			<table name="adv_positions">
+				<query>
+				<![CDATA[
+					CREATE TABLE %SQLPREFIX%_adv_positions (
+					id_position int(12) NOT NULL AUTO_INCREMENT,
+					title varchar(250) NOT NULL,
+					id_ins int(11) default '0',
+					id_upd int(11) default '0',
+					date_ins int(11) NOT NULL default '0',
+					date_upd int(11) NOT NULL default '0',
+					PRIMARY KEY (id_position)
+					) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+				]]>
+				</query>
+			</table>
+			
+
+		</mysql>
+	</sql>
+	<fs>
+		<dir>content/adv/external</dir>
+		<dir>content/adv/image</dir>
+		<dir>content/adv/flash</dir>
+		<dir>content/adv/export</dir>
+	</fs>
+	<methods>
+		<!--<method></method>-->
+	</methods>
+</install>
+
+

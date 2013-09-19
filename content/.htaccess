@@ -1,0 +1,8 @@
+php_value engine off
+RewriteEngine Off
+
+Options -Indexes
+
+# FORCE DOWNLOAD FILE with ?weebo-force-download
+# RewriteCond %{QUERY_STRING} ^weeboforce-download$
+# RewriteRule (.*) - [L,NC,T=application/octet-stream]

@@ -1,0 +1,6 @@
+WeeboNX update package
+28.06.2013
+
+* fixed sitemap bad link issues in CMS module 
+
+

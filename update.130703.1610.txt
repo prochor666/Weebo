@@ -1,0 +1,7 @@
+WeeboNX update package
+03.07.2013
+
+* CMS module, fixed weebo_preview 404 document error
+* CMS module, fixed no 404 header document detail error
+* CMS module, new feature document detail generates page description from article
+

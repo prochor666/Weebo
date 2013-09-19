@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <title>Flash/Strobe Media Playback</title>
+        <style type="text/css">
+            body {
+                font: 12px Arial, sans-serif;
+                background-color: #000000;
+                color: #FFFFFF;
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                overflow: hidden;
+            }
+        </style>
+	    <script type="text/javascript" src="../swfobject/swfobject.js">
+        </script>
+        <script type="text/javascript" src="../jquery.min.js">
+        </script>
+        <script type="text/javascript" src="jquery.strobemediaplayback.js">
+        </script>
+		
+	
+		<script type="text/javascript">
+            $(function(){
+                var options={
+					src: "rtmp://stream1.nxtv.cz/nxtv/nx_low",
+					width: 768,
+					height: 432,
+					streamType: 'live', 
+					autoPlay: true, 
+					scaleMode: 'stretch', 
+					controlBarMode: 'floating', 
+					controlBarAutoHideTimeout: .7, 
+					poster: "images/poster.png"
+				};			
+               
+				// Now we are ready to generate the video tags
+                $("#strobemediaplayback").strobemediaplayback(options);
+            });
+        </script>
+    </head>
+    <body>
+        <div id="strobemediaplayback" >Alternative content</div>   
+    </body>
+</html>

@@ -1,0 +1,11 @@
+WeeboNX update package
+20.06.2013
+
+* fixed echo issues in mysql class
+* fixed moxieplayer auto embed in tinymce
+* updated system class
+* fixed issues in CMS module backend js
+* fixed header issues in CMS module renderer
+* fixed email encoding in CMS module jformSend class
+
+

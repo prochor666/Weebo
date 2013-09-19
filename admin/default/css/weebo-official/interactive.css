@@ -1,0 +1,270 @@
+/* Window wrapper */
+.mwms_data_edit {
+	text-align: left;
+}
+
+/* SYSTEM TEXT INPUTS */
+input.text, input.datetime, input.date, textarea.blob {
+	border: 1px solid #888;
+	font-size: 14px;
+	line-height: 20px;
+	height: 20px;
+	padding: 0 5px;
+	background: #fff;
+	color: #111;
+}
+textarea.blob {
+	height: 140px;
+}
+textarea.mwms_wysiwyg {
+	width: 850px;
+}
+select.select {
+	color: #111;
+	border: 1px solid #888;
+	font-size: 14px;
+	line-height: 20px;
+	height: 20px;
+	background:#fff;
+}
+.mwms_label_as_button {
+	text-align: left;
+	color: #111;
+	font-weight: bold;
+	border: 1px solid #666;
+	cursor: pointer;
+	background: #ededed;
+	display: inline-block;
+}
+.mwms_label_as_button input {
+	margin-right: 0 5px;
+}
+.mwms_data_edit input.text, .mwms_data_edit textarea.text {
+	width: 300px;
+}
+.mwms_content_edit input.text, .mwms_content_edit textarea.text {
+	width: 600px;
+}
+input.date_time_picker {
+	width: 200px !important;
+}
+.mwms_data_edit .mwms_label_as_button {
+	width: 290px;
+}
+.mwms_data_edit select.select {
+	width: 312px;
+}
+input.mwms_error_warning, textarea.mwms_error_warning {
+	background: #fc0 !important;
+}
+tr.mwms_last_action {
+	color: #eee !important;
+	background: #ccc !important;
+}
+td.mwms_last_action {
+	color: #ff0 !important;
+	background: url(../../img/theme-iconset/database_accept.png) #444 no-repeat right center !important;
+}
+
+.mwms_data_edit table td.mwms_spanned_row {
+	text-align: right;
+}
+/* form tables */
+.mwms_data_edit table {
+	border-collapse: collapse;
+}
+
+.mwms_data_edit th {
+	text-align: left;
+	padding: 5px;
+	color: #111;
+	background: #fff;
+}
+.mwms_data_edit table tbody td {
+	text-align: left;
+	padding: 5px;
+}
+
+div.dialog_loader {
+	background: url(../../img/loader.gif) transparent no-repeat center center;
+	margin: 0 auto;
+	width: 64px;
+	height: 32px;
+	line-height: 32px;
+}
+
+span.mwms_mini_loader {
+	display: inline-block;
+	width: 18px;
+	line-height: 8px;
+	background: url(../../img/loader.gif) transparent no-repeat center center;
+	margin: 0 1px 0 5px;
+}
+
+div.mwms_tabs ul li span {
+	display: inline-block;
+}
+
+span.ui-icon-close {
+	cursor: pointer;
+}
+
+/* Weebo shell */
+button#weebo-shell-toggle {
+	position: fixed; 
+	left: 0; 
+	bottom: 0; 
+	z-index: 9999;
+}
+
+button#weebo-shell-close {
+	position: absolute; 
+	right: 2px; 
+	top: 2px; 
+	z-index: 9999;
+	font-size: 12px;
+}
+
+div#weebo-shell {
+	position: fixed; 
+	left: 0; 
+	bottom: 5px; 
+	border: 4px solid #000; 
+	width: 60%; 
+	height: 60%;
+	background: #000;
+	color: #0f0;
+	text-align: left;
+	z-index: 9998;
+	box-shadow: 2px 2px 3px #666;
+	opacity: .8;
+}
+
+div#weebo-shell-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	border-bottom: 1px solid #111;
+}
+
+div#weebo-shell-output {
+	position: absolute; 
+	left: 0; 
+	top: 30px; 
+	overflow: auto;
+	width: 100%;
+}
+
+div#weebo-shell-commandline {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 30px;
+	border-top: 1px solid #111;
+}
+
+input#weebo-shell-commandline-input {
+	border: 0;
+	background: transparent;
+	color: #0f0;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+}
+
+div#weebo-shell table th {
+	text-align: left;
+	vertical-align: top;
+	color: #ff0;
+	padding: 2px;
+	font-weight: normal;
+}
+
+div#weebo-shell table td {
+	text-align: left;
+	vertical-align: top;
+	color: #eee;
+	padding: 2px;
+}
+
+div.cmd-input, td.cmd-input-history, div#weebo-shell code {
+	color: #75BCE8 !important;
+}
+
+div.cmd-input span, td.cmd-input-history, div#weebo-shell code {
+	cursor: pointer;
+}
+
+div.cmd-input span:hover, td.cmd-input-history:hover, div#weebo-shell code:hover {
+	text-decoration: underline;
+}
+
+div.cmd-output {
+	border-bottom: 1px solid #111;
+}
+
+/* UI tab icon fix */ 
+.mwms-floating-icon {
+	float: left;
+	margin: -.1em .4em 0 -.1em;
+}
+
+/* UI sizing hack */
+.ui-button { margin-right: .1em; } /* the overflow property removes extra width in IE */
+.ui-button-icon-only { width: 2em; } /* to make room for the icon, a width needs to be set here */
+button.ui-button-icon-only { width: 2em; } /* button elements seem to need a little more width */
+.ui-button-icons-only { width: 3em; } 
+button.ui-button-icons-only { width: 3.3em; } 
+
+/*button text element */
+.ui-button .ui-button-text { display: block; line-height: 1.2;  }
+.ui-button-text-only .ui-button-text { padding: .2em .6em; }
+.ui-button-icon-only .ui-button-text, .ui-button-icons-only .ui-button-text { padding: .2em; }
+.ui-button-text-icon-primary .ui-button-text, .ui-button-text-icons .ui-button-text { padding: .2em 1em .2em 1.6em; }
+.ui-button-text-icon-secondary .ui-button-text, .ui-button-text-icons .ui-button-text { padding: .2em 1.6em .2em .8em; }
+.ui-button-text-icons .ui-button-text { padding-left: 1.6em; padding-right: 1.6em; }
+/* no icon support for input elements, provide padding by default */
+input.ui-button { padding: .2em .8em; }
+
+/*button icon element(s) */
+.ui-button-text-icon-primary .ui-button-icon-primary, .ui-button-text-icons .ui-button-icon-primary, .ui-button-icons-only .ui-button-icon-primary { left: .2em; }
+.ui-button-text-icon-secondary .ui-button-icon-secondary, .ui-button-text-icons .ui-button-icon-secondary, .ui-button-icons-only .ui-button-icon-secondary { right: .5em; }
+.ui-button-text-icons .ui-button-icon-secondary, .ui-button-icons-only .ui-button-icon-secondary { right: .5em; }
+
+/* css for timepicker */
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+
+
+/* CUSTOM BUTTON FXES */
+a.ui-state-default span.ui-button-text {
+	color: #000;
+}
+
+a.ui-state-active span.ui-button-text {
+	color: #000;
+}
+
+a.ui-state-hover span.ui-button-text {
+	color: #fff;
+}
+
+/* ui-tabs fixes */
+
+.ui-tabs ul li a.ui-state-default {
+	color: #000 !important;
+}
+/*
+.ui-tabs ul li a.ui-state-active:hover {
+	color: #ff6 !important;
+}
+*/

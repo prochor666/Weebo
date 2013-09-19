@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /mwms/
+Disallow: /cache/
+Disallow: /shared/
+Disallow: /admin/
+Disallow: /public/
+Disallow: /userdata/
+Allow: /
+Allow: /content/
+

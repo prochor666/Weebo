@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install>
+	<sql>
+		<mysql>
+			<table name="mm_sources">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_mm_sources (
+					id_source int(11) NOT NULL auto_increment,
+					title varchar(255) default NULL,
+					data text,
+					template text,
+					link text,
+					last_update int(11) default '0',
+					id_public tinyint(1) default '0',
+					id_archive tinyint(1) default '0',
+					last_played int(11) default '0',
+					id_type int(11) default '0',
+					id_ins int(11) default '0',
+					id_upd int(11) default '0',
+					date_ins int(11) NOT NULL default '0',
+					date_upd int(11) NOT NULL default '0',
+					public_order int(11) default '0',
+					PRIMARY KEY (id_source),
+					FULLTEXT KEY `title` (`title`)
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1 AUTO_INCREMENT=1
+				]]>
+				</query>
+			</table>
+			
+			<table name="mm_articles">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_mm_articles (
+					id_article int(11) NOT NULL auto_increment,
+					title varchar(255) default NULL,
+					data text,
+					link text,
+					date_public int(11) default '0',
+					token varchar(255) default NULL,
+					id_public tinyint(1) default '0',
+					public_order int(11) default '0',
+					id_source int(11) default '0',
+					last_played int(11) default '0',
+					id_ins int(11) default '0',
+					id_upd int(11) default '0',
+					date_ins int(11) NOT NULL default '0',
+					date_upd int(11) NOT NULL default '0',
+					PRIMARY KEY (id_article),
+					FULLTEXT KEY `title` (`title`)
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1 AUTO_INCREMENT=1
+				]]>
+				</query>
+			</table>
+			
+			<table name="mm_meta">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_mm_meta (
+					id_article int(11) NOT NULL auto_increment,
+					tag varchar(255) default NULL,
+					value text,
+					PRIMARY KEY (id_article, tag),
+					FULLTEXT KEY `title` (`value`)
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1 AUTO_INCREMENT=1
+				]]>
+				</query>
+			</table>
+		</mysql>
+	</sql>
+	<fs>
+		<dir>content/mediamix/data</dir>
+	</fs>
+	<methods>
+		<!--<method></method>-->
+	</methods>
+</install>
+
+

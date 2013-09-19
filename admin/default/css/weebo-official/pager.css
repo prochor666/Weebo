@@ -1,0 +1,41 @@
+.weebo_pager_fixed {
+	width: 600px;
+	border: 0;
+	margin: 15px auto;
+	text-align: center;
+	position: relative;
+}
+a.weebo_pager_link, a.weebo_pager_actual, a.weebo_pager_first, a.weebo_pager_next, a.weebo_pager_prev, a.weebo_pager_last {
+	text-decoration: none !important;
+	margin: 0 1px;
+	font-weight: bold;
+	
+	
+}
+a.weebo_pager_actual, a.weebo_pager_actual span {
+	color: #f00 !important;
+}
+a.weebo_pager_first {
+	position: absolute;
+	top: 0px;
+	left: 10px;
+}
+a.weebo_pager_prev {
+	position: absolute;
+	top: 0px;
+	left: 60px;
+}
+a.weebo_pager_next {
+	position: absolute;
+	top: 0px;
+	right: 60px;
+}
+a.weebo_pager_last {
+	position: absolute;
+	top: 0px;
+	right: 10px;
+}
+.weebo_pager_fixed a:hover {
+	/*color: #fc0 !important;*/
+}
+

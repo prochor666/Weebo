@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install>
+	<fs>
+		<dir>cache/media_module_cache</dir>
+		<!--<dir>test/unallocated</dir>-->
+	</fs>
+</install>

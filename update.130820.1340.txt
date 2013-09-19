@@ -1,0 +1,5 @@
+WeeboNX update package
+20.08.2013
+
+* devtool improved security, only admin can use
+

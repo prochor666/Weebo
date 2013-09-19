@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install>
+	<sql>
+		<mysql>
+			
+			<!-- Shop items -->
+			<table name="nxmarket_items">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_nxmarket_items (
+					id_item int(11) NOT NULL auto_increment,
+					title varchar(255) default NULL,
+					code varchar(255) default NULL,
+					description text,
+					images text,
+					price float(10,2) NOT NULL default '0.00',
+					vat float(10,2) NOT NULL default '0.00',
+					fake_price float(10,2) NOT NULL default '0.00',
+					stock int(11) NOT NULL default '0',
+					units varchar(20) default NULL,
+					internal tinyint(1) NOT NULL default '0',
+					id_public tinyint(1) NOT NULL default '0',
+					public_order int(11) NOT NULL default '0',
+					id_ins int(11) NOT NULL default '0',
+					id_upd int(11) NOT NULL default '0',
+					date_ins int(11) NOT NULL default '0',
+					date_upd int(11) NOT NULL default '0',
+					PRIMARY KEY (id_item),
+					FULLTEXT KEY `title` (`title`),
+					FULLTEXT KEY `code` (`code`)
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1 AUTO_INCREMENT=1
+				]]>
+				</query>
+			</table>
+			
+			<!-- Shop item metadata definititons -->
+			<table name="nxmarket_meta_types">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_nxmarket_meta_types (
+					tag varchar(255) default NULL,
+					type varchar(20) NOT NULL default 'text',
+					id_filter tinyint(1) NOT NULL default '0',
+					public_order int(11) NOT NULL default '0',
+					config text,
+					description text,
+					PRIMARY KEY (tag),
+					FULLTEXT KEY `tag` (`tag`)
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1
+				]]>
+				</query>
+			</table>
+			
+			<!-- Shop item metadata -->
+			<table name="nxmarket_meta">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_nxmarket_meta (
+					id_item int(11) NOT NULL,
+					tag varchar(255) default NULL,
+					value text,
+					PRIMARY KEY (id_item, tag),
+					FULLTEXT KEY `value` (`value`)
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1
+				]]>
+				</query>
+			</table>
+			
+			<!-- Categories -->
+			<table name="nxmarket_cats">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_nxmarket_cats (
+					id_cat int(11) NOT NULL auto_increment,
+					title varchar(255) default NULL,
+					description text,
+					config text,
+					public_order int(11) NOT NULL default '0',
+					id_public tinyint(1) NOT NULL default '0',
+					id_ins int(11) NOT NULL default '0',
+					id_upd int(11) NOT NULL default '0',
+					date_ins int(11) NOT NULL default '0',
+					date_upd int(11) NOT NULL default '0',
+					PRIMARY KEY (id_cat),
+					FULLTEXT KEY `title` (`title`)
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1 AUTO_INCREMENT=1
+				]]>
+				</query>
+			</table>
+			
+			<!-- Shop price groups -->
+			<table name="nxmarket_groups">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_nxmarket_groups (
+					id_group int(11) NOT NULL auto_increment,
+					title varchar(255) default NULL,
+					description text,
+					value float(10,2) NOT NULL default '0.00',
+					type tinyint(1) NOT NULL default '0',
+					id_public tinyint(1) NOT NULL default '0',
+					id_ins int(11) NOT NULL default '0',
+					id_upd int(11) NOT NULL default '0',
+					date_ins int(11) NOT NULL default '0',
+					date_upd int(11) NOT NULL default '0',
+					PRIMARY KEY (id_group),
+					FULLTEXT KEY `title` (`title`)
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1 AUTO_INCREMENT=1
+				]]>
+				</query>
+			</table>
+			
+			<!-- Shop channels -->
+			<table name="nxmarket_channels">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_nxmarket_channels (
+					id_channel int(11) NOT NULL auto_increment,
+					title varchar(255) default NULL,
+					description text,
+					id_public tinyint(1) NOT NULL default '0',
+					id_ins int(11) NOT NULL default '0',
+					id_upd int(11) NOT NULL default '0',
+					date_ins int(11) NOT NULL default '0',
+					date_upd int(11) NOT NULL default '0',
+					PRIMARY KEY (id_channel),
+					FULLTEXT KEY `title` (`title`)
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1 AUTO_INCREMENT=1
+				]]>
+				</query>
+			</table>
+			
+			<!-- Shop orders -->
+			<table name="nxmarket_orders">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_nxmarket_orders (
+					id_order int(11) NOT NULL auto_increment,
+					status int(11) NOT NULL default '0',
+					firstname varchar(255) default NULL,
+					lastname varchar(255) default NULL,
+					company varchar(255) default NULL,
+					email varchar(255) default NULL,
+					phone varchar(255) default NULL,
+					state varchar(255) default NULL,
+					street varchar(255) default NULL,
+					city varchar(255) default NULL,
+					zip varchar(255) default NULL,
+					delivery_firstname varchar(255) default NULL,
+					delivery_lastname varchar(255) default NULL,
+					delivery_company varchar(255) default NULL,
+					delivery_state varchar(255) default NULL,
+					delivery_street varchar(255) default NULL,
+					delivery_city varchar(255) default NULL,
+					delivery_zip varchar(255) default NULL,
+					description text,
+					regno varchar(255) default NULL,
+					vatno varchar(255) default NULL,
+					bank_account varchar(255) default NULL,
+					bank_code varchar(20) default NULL,
+					price float(10,2) NOT NULL default '0.00',
+					vat float(10,2) NOT NULL default '0.00',
+					id_ins int(11) NOT NULL default '0',
+					id_upd int(11) NOT NULL default '0',
+					date_ins int(11) NOT NULL default '0',
+					date_upd int(11) NOT NULL default '0',
+					PRIMARY KEY (id_order),
+					FULLTEXT KEY `firstname` (`firstname`),
+					FULLTEXT KEY `lastname` (`lastname`),
+					FULLTEXT KEY `company` (`company`),
+					FULLTEXT KEY `email` (`email`),
+					FULLTEXT KEY `phone` (`phone`),
+					FULLTEXT KEY `street` (`street`),
+					FULLTEXT KEY `city` (`city`),
+					FULLTEXT KEY `delivery_firstname` (`delivery_firstname`),
+					FULLTEXT KEY `delivery_lastname` (`delivery_lastname`),
+					FULLTEXT KEY `delivery_company` (`delivery_company`),
+					FULLTEXT KEY `delivery_street` (`delivery_street`),
+					FULLTEXT KEY `delivery_city` (`delivery_city`),
+					FULLTEXT KEY `regno` (`regno`),
+					FULLTEXT KEY `bank_account` (`bank_account`)
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1 AUTO_INCREMENT=1
+				]]>
+				</query>
+			</table>
+			
+			<!-- Shop order items -->
+			<table name="nxmarket_order_items">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_nxmarket_order_items (
+					id_item int(11) NOT NULL,
+					id_order int(11) NOT NULL,
+					title varchar(255) default NULL,
+					meta text,
+					amount int(11) NOT NULL default '0',
+					internal tinyint(1) NOT NULL default '0',
+					price float(10,2) NOT NULL default '0.00',
+					vat float(10,2) NOT NULL default '0.00',
+					id_ins int(11) NOT NULL default '0',
+					id_upd int(11) NOT NULL default '0',
+					date_ins int(11) NOT NULL default '0',
+					date_upd int(11) NOT NULL default '0',
+					PRIMARY KEY (id_item, id_order),
+					FULLTEXT KEY `title` (`title`)
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1
+				]]>
+				</query>
+			</table>
+			
+			<!-- Shop item category assignment -->
+			<table name="nxmarket_cat_link">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_nxmarket_cat_link (
+					id_item int(11) NOT NULL,
+					id_cat int(11) NOT NULL,
+					PRIMARY KEY (id_item, id_cat)
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1
+				]]>
+				</query>
+			</table>
+			
+			<!-- Shop item price group assignment -->
+			<table name="nxmarket_item_group_link">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_nxmarket_item_group_link (
+					id_item int(11) NOT NULL,
+					id_group int(11) NOT NULL,
+					PRIMARY KEY (id_item, id_group)
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1
+				]]>
+				</query>
+			</table>
+			
+			<!-- Shop user price group assignment -->
+			<table name="nxmarket_user_group_link">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_nxmarket_user_group_link (
+					id_user int(11) NOT NULL,
+					id_group int(11) NOT NULL,
+					PRIMARY KEY (id_user, id_group)
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1
+				]]>
+				</query>
+			</table>
+			
+			<!-- Shop delivery & payments -->
+			<table name="nxmarket_delivery">
+				<query>
+				<![CDATA[
+					CREATE TABLE IF NOT EXISTS %SQLPREFIX%_nxmarket_delivery (
+					id_delivery int(11) NOT NULL auto_increment,
+					title varchar(255) default NULL,
+					description text,
+					price float(10,2) NOT NULL default '0.00',
+					vat float(10,2) NOT NULL default '0.00',
+					id_ins int(11) NOT NULL default '0',
+					id_upd int(11) NOT NULL default '0',
+					date_ins int(11) NOT NULL default '0',
+					date_upd int(11) NOT NULL default '0',
+					PRIMARY KEY (id_delivery),
+					FULLTEXT KEY `title` (`title`)
+					) ENGINE=MyISAM  DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1 AUTO_INCREMENT=1
+				]]>
+				</query>
+			</table>
+		</mysql>
+	</sql>
+	<fs>
+		<dir>content/nxmarket/data</dir>
+		<dir>content/nxmarket/media</dir>
+	</fs>
+	<methods>
+		<!--<method></method>-->
+	</methods>
+</install>
+
+

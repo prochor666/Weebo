@@ -1,0 +1,4 @@
+php_value engine off
+RewriteEngine Off
+
+Options -Indexes
